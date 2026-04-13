@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <nav id="navbar" class="navbar-custom fixed-top">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                <img src="https://via.placeholder.com/40" alt="logo" class="me-2">
+                <span class="logo-text">تلال</span>
+            </a>
+
+            <ul class="nav-links d-none d-lg-flex gap-5">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#services">الخدمات</a></li>
+                <li><a href="#projects">المشاريع</a></li>
+                <li><a href="#contact">تواصل</a></li>
+            </ul>
+            <a href="#contact" class="btn-contact d-none d-lg-inline-block">
+                تواصل معنا
+                <i class="fas fa-arrow-alt-circle-left"></i>
+            </a>
+
+            <button id="menuBtn" class="menu-btn d-lg-none">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </nav>
+
+    <div id="overlay"></div>
+
+    <div id="mobileMenu" class="mobile-menu">
+        <a href="index.html">الرئيسية</a>
+        <a href="#about">من نحن</a>
+        <a href="#services">الخدمات</a>
+        <a href="#projects">المشاريع</a>
+        <a href="#contact">تواصل</a>
+
+        <a href="#contact" class="btn-contact mt-3">تواصل معنا</a>
+    </div>
+
+    <section class="hero-section">
+        <div class="hero-bg">
+            <img src="imgs/header.jpg">
+            <div class="overlay"></div>
+        </div>
+
+        <div class="container hero-content">
+            <div class="row g-4 align-items-end">
+
+                <div class="col-lg-7">
+
+                    <div class="badge-custom mb-4">
+                        <span class="dot"></span>
+                        شريك موثوق في التشغيل والصيانة
+                    </div>
+
+                    <h1 class="hero-title">
+                        نوفّر الكوادر… <br>
+                        ونبني <span>نجاح أعمالك</span> بثقة
+
+                    </h1>
+
+                    <p class="hero-text">
+                        شركة تلال متخصصة في توفير العمالة الفنية والمؤهلة للمصانع والفنادق
+                        والمطاعم والمستشفيات وشركات التوريد في جميع أنحاء المنطقة.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#about" class="btn-main">اقرأ المزيد
+                            <i class="fas fa-arrow-alt-circle-left"></i>
+                        </a>
+                        <a href="#services" class="btn-outline">استكشف الخدمات</a>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-5 mt-5 mt-lg-0">
+                    <div class="row g-4">
+
+                        <div class="col-6">
+                            <div class="stat-box">
+                                <h3>+1200</h3>
+                                <p>موظف مؤهل</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="stat-box">
+                                <h3>+15</h3>
+                                <p>سنوات خبرة</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="stat-box">
+                                <h3>+300</h3>
+                                <p>مشروع مكتمل</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="stat-box">
+                                <h3>8</h3>
+                                <p>فروع إقليمية</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>اسحب</span>
+            <div class="line"></div>
+        </div>
+
+    </section>
+
+    <section id="about" class="about-section py-5 overflow-hidden">
+        <div class="container">
+            <div class="row align-items-center g-4">
+
+                <div class="col-lg-6 reveal-left position-relative">
+
+                    <div class="image-box">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1677fb809-1775140448208.png"
+                            alt="">
+                        <div class="image-overlay"></div>
+                    </div>
+
+                    <div class="floating-card">
+                        <h3>+300</h3>
+                        <p>مشروع تم تنفيذه</p>
+                    </div>
+
+
+                </div>
+
+                <div class="col-lg-6 reveal-right d-flex flex-column gap-3 p-4">
+
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="section-tag">عن تلال</span>
+                    </div>
+
+                    <h2 class="about-title">
+                        شريكك الموثوق في التشغيل والصيانة
+                        <span>باحترافية عالية</span>
+                    </h2>
+
+                    <p class="about-text">
+                        شركة تلال للتشغيل والصيانة هي شركة متخصصة في توفير العمالة الفنية
+                        والمؤهلة لمختلف القطاعات، حيث نربط بين الكفاءات المهنية
+                        والجهات التي تحتاج إليها.
+                    </p>
+
+                    <p class="about-text">
+                        نخدم المصانع والفنادق والمطاعم والمستشفيات وشركات التوريد،
+                        ونضمن تشغيلًا سلسًا بكوادر مدربة وجاهزة للعمل.
+                    </p>
+
+                    <div class="row text-center pt-5 border-top">
+                        <div class="col-4">
+                            <h4>+15</h4>
+                            <p>سنوات خبرة</p>
+                        </div>
+                        <div class="col-4">
+                            <h4>+50</h4>
+                            <p>شركاء</p>
+                        </div>
+                        <div class="col-4">
+                            <h4>%98</h4>
+                            <p>رضا العملاء</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="about.html" class="learn-more">
+                            اعرف المزيد
+                            <i class="fas fa-arrow-alt-circle-left"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="goals" class="goals py-5">
+        <div class="container py-5">
+
+            <div class="text-center mb-5 header">
+                <p class="accent">أساسنا</p>
+                <h2 class="title">
+                    أهدافنا
+                </h2>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-lg-7 ">
+                    <div class="card-custom bg-primary-custom h-100">
+                        <div class="icon-box icon-primary">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+
+                        <h5 class="accent">رسالتنا</h5>
+                        <h3 class="mb-3">تحقيق التميز التشغيلي</h3>
+                        <p class="text-white">
+                            تقديم كوادر مؤهلة وموثوقة ذات كفاءة عالية لدعم عمليات عملائنا
+                            وتحقيق أعلى مستويات الكفاءة والسلامة والاستمرارية.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-5 ">
+                    <div class="card-custom bg-accent-custom h-100">
+                        <div class="icon-box icon-accent">
+                            <i class="fas fa-eye text-white"></i>
+                        </div>
+
+                        <h5>رؤيتنا</h5>
+                        <h3 class="mb-3">الريادة في خدمات التشغيل والصيانة</h3>
+                        <p>
+                            أن نكون الشريك الأكثر ثقة في مجال التشغيل والصيانة في المنطقة.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 ">
+                    <div class="card-custom bg-surface h-100">
+                        <div class="icon-box icon-light">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+
+                        <h5 class="accent">قيمنا</h5>
+                        <h3 class="title mb-5">المبادئ الأساسية</h3>
+                        <ul>
+                            <li>النزاهة والشفافية</li>
+                            <li>التميز التقني</li>
+                            <li>العميل أولاً</li>
+                            <li>السلامة والالتزام</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Commitment -->
+                <div class="col-lg-8 ">
+                    <div class="h-100">
+                        <div class="row g-4 justify-content-center text-center">
+
+                            <div class="col-md-6 ">
+                                <div class="card-custom bg-surface">
+                                    <div class="icon-box icon-light mx-auto">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <h3 class="title">كوادر محترفة</h3>
+                                    <p class="text-muted-custom">
+                                        فريق عمل مؤهل في جميع التخصصات
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card-custom bg-surface">
+                                    <div class="icon-box icon-light mx-auto">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <h3 class="title">استجابة سريعة</h3>
+                                    <p class="text-muted-custom">
+                                        سرعة في تلبية احتياجات التشغيل
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card-custom bg-surface">
+                                    <div class="icon-box icon-light mx-auto">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <h3 class="title">جودة مضمونة</h3>
+                                    <p class="text-muted-custom">
+                                        تطبيق أعلى معايير الجودة والمتابعة المستمرة
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section id="services" class="py-5 bg-primary-custom overflow-hidden services">
+        <div class="container">
+
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5 gap-4">
+                <div>
+                    <p class="accent small fw-bold">ماذا نقدم</p>
+                    <h2 class="text-white">
+                        القطاعات التي
+                        نخدمها
+                    </h2>
+                </div>
+                <p class="text-white small">
+                    نقدم حلول تشغيل وصيانة متكاملة تناسب احتياجات كل قطاع.
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+
+                        <img src="https://images.unsplash.com/photo-1583737097468-2cc78bea3c29" />
+
+                        <div class="overlay"></div>
+
+                        <div class="content">
+                            <div class="icon"><i class="fas fa-industry"></i></div>
+                            <h4>المصانع والصناعات</h4>
+                            <p>فنيين ومشغلين متخصصين لدعم العمليات الصناعية والإنتاجية.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_11630356e-1773092856673.png" />
+
+                        <div class="overlay"></div>
+
+                        <div class="content">
+                            <div class="icon"><i class="fas fa-hotel"></i></div>
+                            <h4>الفنادق والضيافة</h4>
+                            <p>فرق متكاملة لإدارة المرافق وخدمات الفنادق.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+
+                        <img src="https://images.unsplash.com/photo-1562600750-b6c36db9142d" />
+
+                        <div class="overlay"></div>
+
+                        <div class="content">
+                            <div class="icon"><i class="fas fa-utensils"></i></div>
+                            <h4>المطاعم</h4>
+                            <p>عمال مطابخ وخدمة وصيانة لمجال الأغذية والمشروبات.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_17ab12f7b-1772807980091.png" />
+
+                        <div class="overlay"></div>
+
+                        <div class="content">
+                            <div class="icon"><i class="fas fa-hospital"></i></div>
+                            <h4>المستشفيات</h4>
+                            <p>دعم فني وخدمات تشغيل للمرافق الصحية.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_12a187ca8-1764799847557.png" />
+
+                        <div class="overlay"></div>
+
+                        <div class="content">
+                            <div class="icon"><i class="fas fa-truck"></i></div>
+                            <h4>شركات التوريد</h4>
+                            <p>دعم لوجستي وتشغيلي لسلاسل الإمداد.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_165796e3b-1768657086566.png" />
+
+                        <div class="overlay"></div>
+
+                        <div class="content">
+                            <div class="icon"><i class="fas fa-building"></i></div>
+                            <h4>إدارة المرافق</h4>
+                            <p>إدارة شاملة تشمل الأمن والنظافة والصيانة.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="branches" class="py-5 bg-light-custom">
+        <div class="container">
+            <div class="text-center mb-5 header">
+                <p class="small fw-bold accent">تواجدنا</p>
+                <h2 class="title mb-4">
+                    فروعنا
+                    الإقليمية
+                </h2>
+                <p class="text-muted-custom fw-semibold">
+                    نمتلك شبكة فروع قوية في الخليج لتقديم خدماتنا بكفاءة عالية.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="branch-card">
+                        <div class="top">
+                            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                        </div>
+
+                        <h5>الرياض</h5>
+                        <p class="country">السعودية</p>
+
+                        <div class="bottom">
+                            <span>المقر الرئيسي</span>
+                            <span><strong>450+</strong> موظف</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                    <div class="branch-card">
+                        <div class="top">
+                            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                        </div>
+
+                        <h5>جدة</h5>
+                        <p class="country">السعودية</p>
+
+                        <div class="bottom">
+                            <span>مكتب إقليمي</span>
+                            <span><strong>280+</strong> موظف</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                    <div class="branch-card">
+                        <div class="top">
+                            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                        </div>
+
+                        <h5>دبي</h5>
+                        <p class="country">الإمارات</p>
+
+                        <div class="bottom">
+                            <span>فرع</span>
+                            <span><strong>95+</strong> موظف</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                    <div class="branch-card">
+                        <div class="top">
+                            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                        </div>
+
+                        <h5>الدوحة</h5>
+                        <p class="country">قطر</p>
+
+                        <div class="bottom">
+                            <span>فرع</span>
+                            <span><strong>55+</strong> موظف</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="why-us" class="why-us py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="d-flex justify-content-center align-items-center gap-2 mb-3">
+                    <div class="divider"></div>
+                    <span class="text-warning small fw-bold">لماذا تختار تلال</span>
+                    <div class="divider"></div>
+                </div>
+                <h2 class="text-white fw-bold">
+                    ميزة <span class="text-warning fst-italic">تلال</span>
+                </h2>
+            </div>
+            <div class="row text-center border-accent rounded overflow-hidden mb-5" id="counters">
+                <div class="col-6 col-lg-3 counter-box">
+                    <h2 data-target="1200">0</h2>
+                    <p class="fw-bolder">فريق عمل مؤهل</p>
+                    <small class="fw-bold">منتشرين في جميع المناطق</small>
+                </div>
+                <div class="col-6 col-lg-3 counter-box">
+                    <h2 data-target="300">0</h2>
+                    <p class="fw-bolder">مشروع مكتمل</p>
+                    <small class="fw-bold">في مختلف القطاعات</small>
+                </div>
+                <div class="col-6 col-lg-3 counter-box">
+                    <h2 data-target="15">0</h2>
+                    <p class="fw-bolder">سنوات خبرة</p>
+                    <small class="fw-bold">في التشغيل والصيانة</small>
+                </div>
+                <div class="col-6 col-lg-3 counter-box">
+                    <h2 data-target="98">0</h2>
+                    <p class="fw-bolder">رضا العملاء</p>
+                    <small class="fw-bold">حسب التقييمات</small>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-box">
+                        <div class="icon-box">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h5>تدقيق صارم</h5>
+                        <p>كل موظف يمر بفحص شامل واختبارات مهارات قبل التوظيف.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-box">
+                        <div class="icon-box">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h5>سرعة التنفيذ</h5>
+                        <p>نوفر العمالة خلال أيام بدل أسابيع.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-box">
+                        <div class="icon-box">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h5>التزام كامل</h5>
+                        <p>نلتزم بجميع القوانين واللوائح المحلية.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-box">
+                        <div class="icon-box">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h5>دعم 24/7</h5>
+                        <p>دعم مستمر على مدار الساعة لأي مشكلة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="projects-section py-5">
+        <div class="container">
+            <div
+                class="d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center mb-5 gap-3 header">
+                <div>
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <span class="accent">أعمالنا</span>
+                    </div>
+
+                    <h2 class="text-primary fw-bold">
+                        مشاريع <span class="text-accent fst-italic">مميزة</span>
+                    </h2>
+                </div>
+
+                <p class="text-muted small fw-bold">
+                    مجموعة من أبرز المشاريع التي نفذناها في مختلف القطاعات.
+                </p>
+
+            </div>
+
+          
+            <div class="row g-4">
+
+             
+                <div class="col-md-6 col-lg-4 ">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1709938345870-c3d7348d7d2e">
+
+                        <div class="overlay"></div>
+
+                        <div class="content">
+                            <span>فندقي</span>
+                            <h5>فندق الفيصلية</h5>
+                        </div>
+
+                        <div class="hover-box">
+                            <i class="fas fa-hotel"></i>
+                            <h5>فندق الفيصلية</h5>
+                            <p>الرياض - السعودية</p>
+                            <small>85 موظف</small>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="col-md-6 col-lg-4 ">
+                    <div class="project-card">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1adae60e8-1773040311609.png">
+
+                        <div class="overlay"></div>
+
+                        <div class="content">
+                            <span>صناعي</span>
+                            <h5>مجمع سابك</h5>
+                        </div>
+
+                        <div class="hover-box">
+                            <i class="fas fa-industry"></i>
+                            <h5>مجمع سابك</h5>
+                            <p>الجبيل - السعودية</p>
+                            <small>240 موظف</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 ">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1682752148741-914a632efaad">
+
+                        <div class="overlay"></div>
+
+                        <div class="content">
+                            <span>طبي</span>
+                            <h5>مدينة الملك عبدالله الطبية</h5>
+                        </div>
+
+                        <div class="hover-box">
+                            <i class="fas fa-hospital"></i>
+                            <h5>مدينة الملك عبدالله الطبية</h5>
+                            <p>مكة - السعودية</p>
+                            <small>120 موظف</small>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="col-md-6 col-lg-4 ">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1643068730179-05c3c0b916aa">
+
+                        <div class="overlay"></div>
+
+                        <div class="content">
+                            <span>فندقي</span>
+                            <h5>فندق جميرا بيتش</h5>
+                        </div>
+
+                        <div class="hover-box">
+                            <i class="fas fa-umbrella-beach"></i>
+                            <h5>فندق جميرا بيتش</h5>
+                            <p>دبي - الإمارات</p>
+                            <small>65 موظف</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 ">
+                    <div class="project-card">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1eed11613-1764798593874.png">
+
+                        <div class="overlay"></div>
+
+                        <div class="content">
+                            <span>لوجستي</span>
+                            <h5>مركز أرامكو</h5>
+                        </div>
+
+                        <div class="hover-box">
+                            <i class="fas fa-warehouse"></i>
+                            <h5>مركز أرامكو</h5>
+                            <p>الظهران - السعودية</p>
+                            <small>180 موظف</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 ">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1663145401201-e69f808e9915">
+
+                        <div class="overlay"></div>
+
+                        <div class="content">
+                            <span>فندقي</span>
+                            <h5>فنادق روتانا</h5>
+                        </div>
+
+                        <div class="hover-box">
+                            <i class="fas fa-building"></i>
+                            <h5>فنادق روتانا</h5>
+                            <p>أبو ظبي - الإمارات</p>
+                            <small>55 موظف</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section id="awards" class="awards-section py-5">
+        <div class="container">
+
+           
+            <div class="text-center mb-5">
+                <div class="d-flex justify-content-center align-items-center gap-2 mb-3">
+                    <div class="divider"></div>
+                    <span class="text-accent small fw-bold">الإنجازات</span>
+                    <div class="divider"></div>
+                </div>
+
+                <h2 class="text-primary fw-bold">
+                    الجوائز <span class="text-accent fst-italic">والشهادات</span>
+                </h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="award-card d-flex gap-3">
+                        <div class="icon-box">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+
+                        <div>
+                            <span class="year mb-3">2024</span>
+                            <h5 class="fw-bold mb-3">أفضل شركة تشغيل وصيانة</h5>
+                            <p class="issuer fw-bold">جمعية إدارة المرافق السعودية</p>
+                            <p class="desc">تم تكريمنا لتميزنا في تقديم الخدمات وجودة فرق العمل في القطاع الصناعي.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="award-card d-flex gap-3">
+                        <div class="icon-box">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+
+                        <div>
+                            <span class="year mb-3">2023</span>
+                            <h5 class="fw-bold mb-3">التميز في التوظيف الفندقي</h5>
+                            <p class="issuer fw-bold">جوائز الضيافة الخليجية</p>
+                            <p class="desc">تقديرًا لتقديم أفضل الكوادر للفنادق الفاخرة.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="award-card d-flex gap-3">
+                        <div class="icon-box">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+
+                        <div>
+                            <span class="year mb-3">2022</span>
+                            <h5 class="fw-bold mb-3">أفضل 10 شركات مقاولات</h5>
+                            <p class="issuer fw-bold">جوائز أعمال الشرق الأوسط</p>
+                            <p class="desc">ضمن أكثر الشركات تأثيرًا في المنطقة في مجال التشغيل.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="award-card d-flex gap-3">
+                        <div class="icon-box">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+
+                        <div>
+                            <span class="year mb-3">2021</span>
+                            <h5 class="fw-bold mb-3">شهادة ISO 9001:2015</h5>
+                            <p class="issuer fw-bold">Bureau Veritas</p>
+                            <p class="desc">شهادة جودة عالمية لجميع العمليات التشغيلية.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section id="testimonials" class="testimonials py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="d-flex justify-content-center align-items-center gap-2 mb-3 header">
+                    <div class="divider"></div>
+                    <span class="accent">آراء العملاء</span>
+                    <div class="divider"></div>
+                </div>
+
+                <h2 class="text-white fw-bold">
+                    ماذا يقول <span class="text-accent fst-italic d-inline-block">عملاؤنا</span>
+                </h2>
+            </div>
+            <div class="swiper testimonialsSwiper">
+
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide h-100">
+                        <div class="testimonial-card">
+
+                            <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+
+                            <div class="stars mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+
+                            <p>تلال ساعدتنا في تشغيل الفندق بكفاءة عالية، فريقهم محترف ومندمج بسهولة مع فريقنا.</p>
+
+                            <div class="client d-flex align-items-center gap-3">
+                                <img
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_13339baaf-1772145258569.png">
+                                <div>
+                                    <h6>أحمد الرشيدي</h6>
+                                    <small>مدير العمليات</small>
+                                    <div class="company">Grand Hyatt Riyadh</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-100">
+                        <div class="testimonial-card">
+
+                            <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+
+                            <div class="stars mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+
+                            <p>نتعامل مع تلال منذ سنوات، سرعة التنفيذ والالتزام لديهم لا يُضاهى.</p>
+
+                            <div class="client d-flex align-items-center gap-3">
+                                <img
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_124644cb0-1763295764731.png">
+                                <div>
+                                    <h6>فاطمة الزهراوي</h6>
+                                    <small>مدير المشتريات</small>
+                                    <div class="company">SABIC</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-100">
+                        <div class="testimonial-card">
+
+                            <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+
+                            <div class="stars mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+
+                            <p>جودة الكوادر الفنية ممتازة، ملتزمين وآمنين في العمل.</p>
+
+                            <div class="client d-flex align-items-center gap-3">
+                                <img
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_1ce067357-1772115209359.png">
+                                <div>
+                                    <h6>د. خالد منصوري</h6>
+                                    <small>مدير المرافق</small>
+                                    <div class="company">King Fahd Medical City</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-100">
+                        <div class="testimonial-card">
+
+                            <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+
+                            <div class="stars mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+
+                            <p>تلال ساعدتنا في تشغيل الفندق بكفاءة عالية، فريقهم محترف ومندمج بسهولة مع فريقنا.</p>
+
+                            <div class="client d-flex align-items-center gap-3">
+                                <img
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_13339baaf-1772145258569.png">
+                                <div>
+                                    <h6>أحمد الرشيدي</h6>
+                                    <small>مدير العمليات</small>
+                                    <div class="company">Grand Hyatt Riyadh</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-100">
+                        <div class="testimonial-card">
+
+                            <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+
+                            <div class="stars mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+
+                            <p>نتعامل مع تلال منذ سنوات، سرعة التنفيذ والالتزام لديهم لا يُضاهى.</p>
+
+                            <div class="client d-flex align-items-center gap-3">
+                                <img
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_124644cb0-1763295764731.png">
+                                <div>
+                                    <h6>فاطمة الزهراوي</h6>
+                                    <small>مدير المشتريات</small>
+                                    <div class="company">SABIC</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-100">
+                        <div class="testimonial-card">
+
+                            <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+
+                            <div class="stars mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+
+                            <p>جودة الكوادر الفنية ممتازة، ملتزمين وآمنين في العمل.</p>
+
+                            <div class="client d-flex align-items-center gap-3">
+                                <img
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_1ce067357-1772115209359.png">
+                                <div>
+                                    <h6>د. خالد منصوري</h6>
+                                    <small>مدير المرافق</small>
+                                    <div class="company">King Fahd Medical City</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-100">
+                        <div class="testimonial-card">
+
+                            <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+
+                            <div class="stars mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+
+                            <p>تلال ساعدتنا في تشغيل الفندق بكفاءة عالية، فريقهم محترف ومندمج بسهولة مع فريقنا.</p>
+
+                            <div class="client d-flex align-items-center gap-3">
+                                <img
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_13339baaf-1772145258569.png">
+                                <div>
+                                    <h6>أحمد الرشيدي</h6>
+                                    <small>مدير العمليات</small>
+                                    <div class="company">Grand Hyatt Riyadh</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-100">
+                        <div class="testimonial-card">
+
+                            <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+
+                            <div class="stars mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+
+                            <p>نتعامل مع تلال منذ سنوات، سرعة التنفيذ والالتزام لديهم لا يُضاهى.</p>
+
+                            <div class="client d-flex align-items-center gap-3">
+                                <img
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_124644cb0-1763295764731.png">
+                                <div>
+                                    <h6>فاطمة الزهراوي</h6>
+                                    <small>مدير المشتريات</small>
+                                    <div class="company">SABIC</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-100">
+                        <div class="testimonial-card">
+
+                            <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+
+                            <div class="stars mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+
+                            <p>جودة الكوادر الفنية ممتازة، ملتزمين وآمنين في العمل.</p>
+
+                            <div class="client d-flex align-items-center gap-3">
+                                <img
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_1ce067357-1772115209359.png">
+                                <div>
+                                    <h6>د. خالد منصوري</h6>
+                                    <small>مدير المرافق</small>
+                                    <div class="company">King Fahd Medical City</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-100">
+                        <div class="testimonial-card">
+
+                            <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+
+                            <div class="stars mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+
+                            <p>تلال ساعدتنا في تشغيل الفندق بكفاءة عالية، فريقهم محترف ومندمج بسهولة مع فريقنا.</p>
+
+                            <div class="client d-flex align-items-center gap-3">
+                                <img
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_13339baaf-1772145258569.png">
+                                <div>
+                                    <h6>أحمد الرشيدي</h6>
+                                    <small>مدير العمليات</small>
+                                    <div class="company">Grand Hyatt Riyadh</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide h-100">
+                        <div class="testimonial-card">
+
+                            <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+
+                            <div class="stars mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+
+                            <p>نتعامل مع تلال منذ سنوات، سرعة التنفيذ والالتزام لديهم لا يُضاهى.</p>
+
+                            <div class="client d-flex align-items-center gap-3">
+                                <img
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_124644cb0-1763295764731.png">
+                                <div>
+                                    <h6>فاطمة الزهراوي</h6>
+                                    <small>مدير المشتريات</small>
+                                    <div class="company">SABIC</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide h-100">
+                        <div class="testimonial-card">
+
+                            <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+
+                            <div class="stars mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+
+                            <p>جودة الكوادر الفنية ممتازة، ملتزمين وآمنين في العمل.</p>
+
+                            <div class="client d-flex align-items-center gap-3">
+                                <img
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_1ce067357-1772115209359.png">
+                                <div>
+                                    <h6>د. خالد منصوري</h6>
+                                    <small>مدير المرافق</small>
+                                    <div class="company">King Fahd Medical City</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+    </section>
+    <section id="contact" class="contact-section py-5">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-5 ">
+                    <h2 class="text-primary mb-3 fw-bold">
+                        تواصل <span class="text-accent fst-italic">معنا</span>
+                    </h2>
+                    <p class="text-muted mb-4 fw-semibold">
+                        تواصل معنا الآن لتحسين تشغيل منشأتك من خلال كوادر مؤهلة.
+                    </p>
+                    <div class="info-box d-flex gap-3 mb-4 mt-5">
+                        <i class="fas fa-location-dot"></i>
+                        <div>
+                            <small class="text-muted fw-bold">المقر الرئيسي</small>
+                            <p>الرياض - حي العليا - طريق الملك فهد</p>
+                        </div>
+                    </div>
+
+                    <div class="info-box d-flex gap-3 mb-4">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <small class="text-muted fw-bold">الهاتف</small>
+                            <p>+966 11 234 5678</p>
+                        </div>
+                    </div>
+
+                    <div class="info-box d-flex gap-3">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <small class="text-muted fw-bold">البريد الإلكتروني</small>
+                            <p>info@telal-om.com</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-7">
+
+                    <div class="form-box">
+                        <div id="success" class="text-center d-none py-5">
+                            <div class="success-icon mb-3">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <h4>تم إرسال طلبك بنجاح</h4>
+                            <p class="text-white">سنتواصل معك خلال 24 ساعة</p>
+                        </div>
+                        <form id="contactForm">
+
+                            <div class="row g-3">
+
+                                <div class="col-md-6">
+                                    <label>الاسم الكامل</label>
+                                    <input type="text" class="form-control">
+                                    <small class="text-danger error-msg d-none"></small>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label>الشركة</label>
+                                    <input type="text" class="form-control">
+                                    <small class="text-danger error-msg d-none"></small>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label>البريد الإلكتروني</label>
+                                    <input type="email" class="form-control">
+                                    <small class="text-danger error-msg d-none"></small>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label>الهاتف</label>
+                                    <input type="tel" class="form-control">
+                                    <small class="text-danger error-msg d-none"></small>
+                                </div>
+
+                                <div class="col-12">
+                                    <label>القطاع</label>
+                                    <select class="form-control">
+                                        <option class="text-primary">اختر القطاع</option>
+                                        <option class="text-primary">صناعة</option>
+                                        <option class="text-primary">فنادق</option>
+                                        <option class="text-primary">مطاعم</option>
+                                        <option class="text-primary">مستشفيات</option>
+                                        <option class="text-primary">لوجستيات</option>
+                                    </select>
+                                    <small class="text-danger error-msg d-none"></small>
+                                </div>
+
+                                <div class="col-12">
+                                    <label>الرسالة</label>
+                                    <textarea class="form-control" rows="4"></textarea>
+                                    <small class="text-danger error-msg d-none"></small>
+                                </div>
+
+                                <div class="col-12 text-end">
+                                    <button type="submit" class="btn btn-accent w-100">
+                                        إرسال الطلب <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <footer>
+
+        <div class="container">
+            <div class="row border-bottom border-light border-opacity-10 pb-4 align-items-center">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="footer-logo">
+                        <i class="fa-solid fa-building"></i>
+                        <span>Telal</span>
+                    </div>
+                    <p class="footer-text mt-3 fw-bold">
+                        متخصصون في التشغيل والصيانة وتوفير كوادر مؤهلة للصناعات في مختلف القطاعات.
+                    </p>
+                </div>
+
+                <div class="col-md-6 col-lg-5 mb-4">
+                    <div class="d-flex flex-wrap gap-2">
+                        <a class="footer-link" href="index.html">الرئيسية</a>
+                        <a class="footer-link" href="#about">من نحن</a>
+                        <a class="footer-link" href="#services">الخدمات</a>
+                        <a class="footer-link" href="#projects">المشاريع</a>
+                        <a class="footer-link" href="#branches">الفروع</a>
+                        <a class="footer-link" href="#contact">تواصل معنا</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-4 d-flex gap-2">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center pt-4">
+
+                <div class="bottom-text text-white mb-2 mb-md-0">
+                    © 2026 Telal Operations & Maintenance. جميع الحقوق محفوظة
+                </div>
+
+                <div class="d-flex gap-3">
+                    <p>تم التنفيذ بواسطه شركة
+                        <a href="" class="text-warning fw-bold text-decoration-none d-inline-block">GMT WEB</a>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+    <a href="https://wa.me/996560216521" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
