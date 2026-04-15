@@ -1798,3 +1798,8 @@ footer {
     margin-top: 10px;
     color: var(--color-surface) !important;
 }
+
+.phone {
+    direction: ltr !important;
+    unicode-bidi: bidi-override;
+}
