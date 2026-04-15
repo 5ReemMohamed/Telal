@@ -1,166 +1,142 @@
-window.addEventListener("load", () => {
-    document.querySelectorAll(".hero-content > *").forEach((el, i) => {
-        el.style.opacity = 0;
-        el.style.transform = "translateY(20px)";
+document.addEventListener("DOMContentLoaded", () => {
 
-        setTimeout(() => {
-            el.style.transition = "0.6s";
-            el.style.opacity = 1;
-            el.style.transform = "translateY(0)";
-        }, i * 200);
+    window.addEventListener("load", () => {
+        document.querySelectorAll(".hero-content > *").forEach((el, i) => {
+            el.style.opacity = 0;
+            el.style.transform = "translateY(20px)";
+
+            setTimeout(() => {
+                el.style.transition = "0.6s";
+                el.style.opacity = 1;
+                el.style.transform = "translateY(0)";
+            }, i * 200);
+        });
     });
-});
 
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const overlay = document.getElementById("overlay");
+    const navbar = document.getElementById("navbar");
 
+    let isOpen = false;
 
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
-const overlay = document.getElementById("overlay");
-const navbar = document.getElementById("navbar");
+    function closeMenu() {
+        isOpen = false;
+        mobileMenu?.classList.remove("open");
+        overlay?.classList.remove("active");
+        menuBtn?.classList.remove("active");
+        document.body.style.overflow = "";
+    }
 
-let isOpen = false;
-
-
-
-if (menuBtn) {
-    menuBtn.addEventListener("click", () => {
+    menuBtn?.addEventListener("click", () => {
         isOpen = !isOpen;
 
         mobileMenu?.classList.toggle("open");
         overlay?.classList.toggle("active");
-        menuBtn.classList.toggle("active");
+        menuBtn?.classList.toggle("active");
 
         document.body.style.overflow = isOpen ? "hidden" : "";
     });
-}
 
+    overlay?.addEventListener("click", closeMenu);
 
-
-function closeMenu() {
-    isOpen = false;
-
-    mobileMenu?.classList.remove("open");
-    overlay?.classList.remove("active");
-    menuBtn?.classList.remove("active");
-
-    document.body.style.overflow = "";
-}
-
-
-
-overlay?.addEventListener("click", closeMenu);
-
-
-
-document.querySelectorAll("#mobileMenu a").forEach(link => {
-    link.addEventListener("click", closeMenu);
-});
-
-
-window.addEventListener("scroll", () => {
-    if (!navbar) return;
-
-    if (window.scrollY > 60) {
-        navbar.classList.add("scrolled");
-    } else {
-        navbar.classList.remove("scrolled");
-    }
-});
-
-
-const mediaQuery = window.matchMedia("(min-width: 992px)");
-
-mediaQuery.addEventListener("change", (e) => {
-    if (e.matches) closeMenu();
-});
-
-
-
-const aboutSection = document.getElementById("about");
-
-if (aboutSection) {
-    const aboutObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target
-                    .querySelectorAll(".reveal-left, .reveal-right")
-                    .forEach(el => el.classList.add("revealed"));
-            }
-        });
-    }, { threshold: 0.15 });
-
-    aboutObserver.observe(aboutSection);
-}
-
-
-
-
-const counters = document.querySelectorAll("[data-target]");
-
-function runCounters() {
-    counters.forEach(counter => {
-        const target = +counter.getAttribute("data-target");
-        let count = 0;
-
-        const update = () => {
-            const increment = target / 100;
-
-            count += increment;
-
-            if (count < target) {
-                counter.innerText = Math.floor(count);
-                requestAnimationFrame(update);
-            } else {
-                counter.innerText = target;
-            }
-        };
-
-        update();
+    document.querySelectorAll("#mobileMenu a").forEach(link => {
+        link.addEventListener("click", closeMenu);
     });
-}
 
-let started = false;
-window.addEventListener("scroll", () => {
-    const section = document.getElementById("counters");
+    window.addEventListener("scroll", () => {
+        if (!navbar) return;
 
-    if (!started && section.getBoundingClientRect().top < window.innerHeight) {
-        runCounters();
-        started = true;
+        if (window.scrollY > 60) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+    });
+
+    window.matchMedia("(min-width: 992px)")
+        .addEventListener("change", (e) => {
+            if (e.matches) closeMenu();
+        });
+
+    const aboutSection = document.getElementById("about");
+
+    if (aboutSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target
+                        .querySelectorAll(".reveal-left, .reveal-right")
+                        .forEach(el => el.classList.add("revealed"));
+                }
+            });
+        }, { threshold: 0.15 });
+
+        observer.observe(aboutSection);
     }
-});
 
-const form = document.getElementById("contactForm");
-const successBox = document.getElementById("success");
+    const counters = document.querySelectorAll("[data-target]");
+    let started = false;
 
-if (form) {
+    function runCounters() {
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute("data-target")) || 0;
+            let count = 0;
+
+            function update() {
+                const increment = target / 100;
+                count += increment;
+
+                if (count < target) {
+                    counter.innerText = Math.floor(count);
+                    requestAnimationFrame(update);
+                } else {
+                    counter.innerText = target;
+                }
+            }
+
+            update();
+        });
+    }
+
+    window.addEventListener("scroll", () => {
+        const section = document.getElementById("counters");
+
+        if (!started && section && section.getBoundingClientRect().top < window.innerHeight) {
+            runCounters();
+            started = true;
+        }
+    });
+
+    const form = document.getElementById("contactForm");
+    const successBox = document.getElementById("success");
+
+    if (!form) return;
 
     const rules = {
         name: /^[\u0600-\u06FFa-zA-Z\s]{3,}$/,
         email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-        phone: /^(\+?\d{9,15})$/,
+        phone: /^(\+?\d{9,15})$/
     };
 
-    const inputs = form.querySelectorAll("input, textarea, select");
+    function getError(input) {
+        return input.parentElement?.querySelector(".error-msg");
+    }
 
     function showError(input, message) {
-        let error = input.parentElement.querySelector(".error-msg");
-
-        if (!error) {
-            error = document.createElement("small");
-            error.className = "text-danger error-msg";
-            input.parentElement.appendChild(error);
-        }
+        const error = getError(input);
+        if (!error) return;
 
         error.textContent = message;
         error.classList.remove("d-none");
     }
 
     function clearError(input) {
-        const error = input.parentElement.querySelector(".error-msg");
-        if (error) {
-            error.textContent = "";
-            error.classList.add("d-none");
-        }
+        const error = getError(input);
+        if (!error) return;
+
+        error.textContent = "";
+        error.classList.add("d-none");
     }
 
     function validateField(input) {
@@ -171,30 +147,25 @@ if (form) {
             return false;
         }
 
-        if (input.tagName === "SELECT" && !input.value) {
+        // select check
+        if (input.tagName === "SELECT" && !value) {
             showError(input, "اختر القطاع");
             return false;
         }
 
-        if (input.type === "text" && input.name === "name") {
-            if (!rules.name.test(value)) {
-                showError(input, "الاسم يجب أن يكون 3 حروف على الأقل");
-                return false;
-            }
+        if (input.name === "name" && !rules.name.test(value)) {
+            showError(input, "الاسم يجب أن يكون 3 حروف على الأقل");
+            return false;
         }
 
-        if (input.type === "email") {
-            if (!rules.email.test(value)) {
-                showError(input, "البريد الإلكتروني غير صحيح");
-                return false;
-            }
+        if (input.name === "email" && !rules.email.test(value)) {
+            showError(input, "البريد الإلكتروني غير صحيح");
+            return false;
         }
 
-        if (input.type === "tel" && value) {
-            if (!rules.phone.test(value)) {
-                showError(input, "رقم الهاتف غير صحيح");
-                return false;
-            }
+        if (input.name === "phone" && value && !rules.phone.test(value)) {
+            showError(input, "رقم الهاتف غير صحيح");
+            return false;
         }
 
         clearError(input);
@@ -202,69 +173,74 @@ if (form) {
     }
 
     function validateForm() {
-        let valid = true;
+        let isValid = true;
 
-        inputs.forEach(input => {
-            if (!validateField(input)) valid = false;
+        form.querySelectorAll("input, textarea, select").forEach(input => {
+            if (!validateField(input)) {
+                isValid = false;
+            }
         });
 
-        return valid;
+        return isValid;
     }
 
+    function getValue(name) {
+        return form.querySelector(`[name="${name}"]`)?.value.trim() || "";
+    }
+
+    /* ================= BUILD WHATSAPP MESSAGE ================= */
     function buildMessage() {
-        const name = form.querySelector('input[name="name"]').value;
-        const company = form.querySelector('input[name="company"]').value;
-        const email = form.querySelector('input[type="email"]').value;
-        const phone = form.querySelector('input[type="tel"]').value;
-        const sector = form.querySelector("select").value;
-        const message = form.querySelector("textarea").value;
-
         return `📩 طلب جديد من الموقع:
-👤 الاسم: ${name}
-🏢 الشركة: ${company}
-📧 البريد: ${email}
-📞 الهاتف: ${phone}
-🏭 القطاع: ${sector}
-💬 الرسالة: ${message}`;
+👤 الاسم: ${getValue("name")}
+🏢 الشركة: ${getValue("company")}
+📧 البريد: ${getValue("email")}
+📞 الهاتف: ${getValue("phone")}
+🏭 القطاع: ${getValue("sector")}
+💬 الرسالة: ${getValue("message")}`;
     }
 
-    form.addEventListener("submit", function (e) {
+    /* ================= SUBMIT ================= */
+    form.addEventListener("submit", (e) => {
         e.preventDefault();
 
         if (!validateForm()) return;
 
-        const text = encodeURIComponent(buildMessage());
         const phoneNumber = "966560216521";
+        const text = encodeURIComponent(buildMessage());
 
-        const whatsappURL = `https://wa.me/${phoneNumber}?text=${text}`;
-        window.open(whatsappURL, "_blank");
+        window.open(`https://wa.me/${phoneNumber}?text=${text}`, "_blank");
 
         form.classList.add("d-none");
         successBox?.classList.remove("d-none");
 
         setTimeout(() => {
-            successBox?.classList.add("d-none");
-            form.classList.remove("d-none");
             form.reset();
-        }, 6000);
+            form.classList.remove("d-none");
+            successBox?.classList.add("d-none");
+        }, 5000);
     });
 
+
+
+if (typeof Swiper !== "undefined") {
+    new Swiper(".heroSwiper", {
+        effect: "fade",
+        fadeEffect: { crossFade: true },
+        loop: true,
+        speed: 3000,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        }
+    });
 }
 
-const heroSwiper = new Swiper(".heroSwiper", {
-    effect: "fade",
-    fadeEffect: {
-        crossFade: true
-    },
-    loop: true,
-    speed: 3000,
-    autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-    }
-});
-AOS.init({
-    duration: 1000,
-    once: false,
-    offset: 100
+if (typeof AOS !== "undefined") {
+    AOS.init({
+        duration: 1000,
+        once: false,
+        offset: 100
+    });
+}
+
 });
