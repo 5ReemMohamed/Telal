@@ -75,38 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(aboutSection);
     }
 
-    const counters = document.querySelectorAll("[data-target]");
-    let started = false;
 
-    function runCounters() {
-        counters.forEach(counter => {
-            const target = parseInt(counter.getAttribute("data-target")) || 0;
-            let count = 0;
 
-            function update() {
-                const increment = target / 100;
-                count += increment;
 
-                if (count < target) {
-                    counter.innerText = Math.floor(count);
-                    requestAnimationFrame(update);
-                } else {
-                    counter.innerText = target;
-                }
-            }
-
-            update();
-        });
-    }
-
-    window.addEventListener("scroll", () => {
-        const section = document.getElementById("counters");
-
-        if (!started && section && section.getBoundingClientRect().top < window.innerHeight) {
-            runCounters();
-            started = true;
-        }
-    });
 
     const form = document.getElementById("contactForm");
     const successBox = document.getElementById("success");
@@ -188,7 +159,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return form.querySelector(`[name="${name}"]`)?.value.trim() || "";
     }
 
-    /* ================= BUILD WHATSAPP MESSAGE ================= */
     function buildMessage() {
         return `📩 طلب جديد من الموقع:
 👤 الاسم: ${getValue("name")}
@@ -199,7 +169,6 @@ document.addEventListener("DOMContentLoaded", () => {
 💬 الرسالة: ${getValue("message")}`;
     }
 
-    /* ================= SUBMIT ================= */
     form.addEventListener("submit", (e) => {
         e.preventDefault();
 
@@ -222,25 +191,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-if (typeof Swiper !== "undefined") {
-    new Swiper(".heroSwiper", {
-        effect: "fade",
-        fadeEffect: { crossFade: true },
-        loop: true,
-        speed: 3000,
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        }
-    });
-}
-
-if (typeof AOS !== "undefined") {
-    AOS.init({
-        duration: 1000,
-        once: false,
-        offset: 100
-    });
-}
+    
+        new Swiper(".heroSwiper", {
+            effect: "fade",
+            fadeEffect: { crossFade: true },
+            loop: true,
+            speed: 3000,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            }
+        });
+    
+  
+       
+    
 
 });
+
+ AOS.init({
+            duration: 1000,
+            once: false,
+            offset: 100
+        });
