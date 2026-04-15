@@ -1,8 +1,8 @@
 :root {
-    --color-primary: #0A1628;
-    --color-primary-dark: #060E1A;
+    --color-primary: #313e55;
+    --color-primary-dark: #293448;
     --color-primary-light: #0D1F3C;
-    --color-accent: #C49A4A;
+    --color-accent: #a68049;
     --color-accent-light: #E8C06A;
     --color-accent-dark: #8B6914;
     --color-background: #F8F6F1;
@@ -35,6 +35,7 @@ body {
     color: var(--color-foreground);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 
@@ -428,6 +429,7 @@ body {
 
 .btn-contact:hover {
     background: var(--color-accent-dark);
+    color: var(--color-surface) !important;
 }
 
 
@@ -493,7 +495,7 @@ body {
 
 .hero-section {
     position: relative;
-    min-height: 100vh;
+    min-height: 120vh;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -527,6 +529,7 @@ body {
     z-index: 2;
     color: var(--color-surface);
     padding-bottom: 50px;
+    padding-top: 150px;
 
 }
 
@@ -1129,6 +1132,8 @@ body {
 .why-us {
     background: var(--color-primary-dark);
     color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.464);
+    padding-bottom: 100px !important;
 }
 
 .divider {
@@ -1342,6 +1347,7 @@ body {
 .testimonials {
     background: var(--color-primary-dark);
     color: white;
+    padding-top: 100px !important;
 }
 
 .text-accent {
@@ -1436,6 +1442,7 @@ body {
     padding: 30px;
     border-radius: 20px;
     color: var(--color-surface);
+    border: 6px solid var(--color-accent-dark);
 }
 
 .form-control {
@@ -1593,10 +1600,10 @@ footer {
     margin: 0 8px;
 }
 
-  .whatsapp-float {
+.whatsapp-float {
     position: fixed;
     bottom: 20px;
-    left: 20px; 
+    left: 20px;
     width: 55px;
     height: 55px;
     background-color: #25D366;
@@ -1604,16 +1611,190 @@ footer {
     border-radius: 50%;
     text-align: center;
     font-size: 26px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: 0.3s;
     text-decoration: none;
-  }
+}
 
-  .whatsapp-float:hover {
+.whatsapp-float:hover {
     background-color: #1ebe5d;
     transform: scale(1.1);
-  }
+}
+
+/* swiper full height */
+.heroSwiper,
+.heroSwiper .swiper-slide {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.heroSwiper {
+    position: relative;
+    overflow: hidden;
+}
+
+.heroSwiper .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(10, 22, 40, 0.89),
+            rgba(10, 22, 40, 0.851),
+            transparent);
+}
+
+.logo-img {
+    position: relative;
+    width: fit-content;
+    margin: auto;
+}
+
+.logo-img img {
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.logo-img::before {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    inset: -18px;
+    box-shadow: 0 0 10px rgba(166, 127, 73, 0.4);
+    border-top: 5px solid #a67f49;
+    border-right: 5px solid #313e55;
+    animation: spin 4s linear infinite;
+    z-index: 1;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.accordion-item {
+    border: none;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    font-weight: 700;
+}
+
+.accordion-button {
+    font-weight: 700;
+    box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background: #313e55;
+    color: #fff;
+}
+
+.faq-img {
+    border-radius: 20px;
+    filter:
+        contrast(1.15) brightness(0.92) saturate(1.2) sepia(0.15) hue-rotate(-5deg);
+    min-height: 400px;
+}
+
+.accordion-button::after {
+    margin-left: 0;
+    margin-right: auto;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23313e55'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.process-box {
+    background: var(--color-primary);
+    padding: 30px 20px;
+    border-radius: 16px;
+    position: relative;
+    transition: 0.3s;
+    height: 100%;
+    border-right: 6px solid var(--color-accent);
+}
+
+.process-box:hover {
+    transform: translateX(-8px);
+}
+
+.process-box .step {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 10px;
+}
+
+.process-box h5 {
+    color: var(--color-surface);
+    font-weight: 700;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.process-box p {
+    color: rgba(255, 255, 255, 0.685);
+    font-weight: 600;
+}
+
+.final-cta {
+    padding: 80px 0;
+    color: #fff;
+    background: linear-gradient(120deg, #313e55, #a67f49);
+    position: relative;
+    overflow: hidden;
+}
+
+.final-cta::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    top: -100px;
+    right: -100px;
+}
+
+.final-cta::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    bottom: -100px;
+    left: -100px;
+}
+
+.final-cta h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-surface) !important;
+    margin-bottom: 15px;
+}
+
+.final-cta p {
+    opacity: 0.9;
+    margin-top: 10px;
+    color: var(--color-surface) !important;
+}

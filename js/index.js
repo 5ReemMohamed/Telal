@@ -132,153 +132,139 @@ window.addEventListener("scroll", () => {
 const form = document.getElementById("contactForm");
 const successBox = document.getElementById("success");
 
-const rules = {
-    name: /^[\u0600-\u06FFa-zA-Z\s]{3,}$/, // Arabic/English name
-    email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-    phone: /^(\+?\d{9,15})$/, // international format
-};
+if (form) {
 
-const inputs = form.querySelectorAll("input, textarea, select");
+    const rules = {
+        name: /^[\u0600-\u06FFa-zA-Z\s]{3,}$/,
+        email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        phone: /^(\+?\d{9,15})$/,
+    };
 
-function showError(input, message) {
-    let error = input.parentElement.querySelector(".error-msg");
+    const inputs = form.querySelectorAll("input, textarea, select");
 
-    if (!error) {
-        error = document.createElement("small");
-        error.className = "text-danger error-msg";
-        input.parentElement.appendChild(error);
+    function showError(input, message) {
+        let error = input.parentElement.querySelector(".error-msg");
+
+        if (!error) {
+            error = document.createElement("small");
+            error.className = "text-danger error-msg";
+            input.parentElement.appendChild(error);
+        }
+
+        error.textContent = message;
+        error.classList.remove("d-none");
     }
 
-    error.textContent = message;
-    error.classList.remove("d-none");
-}
-
-function clearError(input) {
-    const error = input.parentElement.querySelector(".error-msg");
-    if (error) {
-        error.textContent = "";
-        error.classList.add("d-none");
-    }
-}
-
-function validateField(input) {
-    const value = input.value.trim();
-    const name = input.previousElementSibling?.textContent || input.name;
-
-    // required check
-    if (!value && input.tagName !== "SELECT") {
-        showError(input, "هذا الحقل مطلوب");
-        return false;
+    function clearError(input) {
+        const error = input.parentElement.querySelector(".error-msg");
+        if (error) {
+            error.textContent = "";
+            error.classList.add("d-none");
+        }
     }
 
-    if (input.tagName === "SELECT" && !input.value) {
-        showError(input, "اختر القطاع");
-        return false;
-    }
+    function validateField(input) {
+        const value = input.value.trim();
 
-    if (input.type === "text" && input.name === "name") {
-        if (!rules.name.test(value)) {
-            showError(input, "الاسم يجب أن يكون 3 حروف على الأقل");
+        if (!value && input.tagName !== "SELECT") {
+            showError(input, "هذا الحقل مطلوب");
             return false;
         }
-    }
 
-    if (input.type === "email") {
-        if (!rules.email.test(value)) {
-            showError(input, "البريد الإلكتروني غير صحيح");
+        if (input.tagName === "SELECT" && !input.value) {
+            showError(input, "اختر القطاع");
             return false;
         }
+
+        if (input.type === "text" && input.name === "name") {
+            if (!rules.name.test(value)) {
+                showError(input, "الاسم يجب أن يكون 3 حروف على الأقل");
+                return false;
+            }
+        }
+
+        if (input.type === "email") {
+            if (!rules.email.test(value)) {
+                showError(input, "البريد الإلكتروني غير صحيح");
+                return false;
+            }
+        }
+
+        if (input.type === "tel" && value) {
+            if (!rules.phone.test(value)) {
+                showError(input, "رقم الهاتف غير صحيح");
+                return false;
+            }
+        }
+
+        clearError(input);
+        return true;
     }
 
-    if (input.type === "tel" && value) {
-        if (!rules.phone.test(value)) {
-            showError(input, "رقم الهاتف غير صحيح");
-            return false;
-        }
+    function validateForm() {
+        let valid = true;
+
+        inputs.forEach(input => {
+            if (!validateField(input)) valid = false;
+        });
+
+        return valid;
     }
 
-    clearError(input);
-    return true;
-}
+    function buildMessage() {
+        const name = form.querySelector('input[name="name"]').value;
+        const company = form.querySelector('input[name="company"]').value;
+        const email = form.querySelector('input[type="email"]').value;
+        const phone = form.querySelector('input[type="tel"]').value;
+        const sector = form.querySelector("select").value;
+        const message = form.querySelector("textarea").value;
 
-function validateForm() {
-    let valid = true;
-
-    inputs.forEach(input => {
-        if (!validateField(input)) {
-            valid = false;
-        }
-    });
-
-    return valid;
-}
-
-function buildMessage() {
-    const name = form.querySelector('input[type="text"]').value;
-    const company = form.querySelectorAll('input[type="text"]')[1].value;
-    const email = form.querySelector('input[type="email"]').value;
-    const phone = form.querySelector('input[type="tel"]').value;
-    const sector = form.querySelector("select").value;
-    const message = form.querySelector("textarea").value;
-
-    return `
-📩 طلب جديد من الموقع:
-
+        return `📩 طلب جديد من الموقع:
 👤 الاسم: ${name}
 🏢 الشركة: ${company}
 📧 البريد: ${email}
 📞 الهاتف: ${phone}
 🏭 القطاع: ${sector}
-💬 الرسالة: ${message}
-  `;
+💬 الرسالة: ${message}`;
+    }
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        if (!validateForm()) return;
+
+        const text = encodeURIComponent(buildMessage());
+        const phoneNumber = "966560216521";
+
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${text}`;
+        window.open(whatsappURL, "_blank");
+
+        form.classList.add("d-none");
+        successBox?.classList.remove("d-none");
+
+        setTimeout(() => {
+            successBox?.classList.add("d-none");
+            form.classList.remove("d-none");
+            form.reset();
+        }, 6000);
+    });
+
 }
 
-form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    if (!validateForm()) return;
-
-    const text = encodeURIComponent(buildMessage());
-    const phoneNumber = "966560216521";
-
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${text}`;
-
-    window.open(whatsappURL, "_blank");
-
-    form.classList.add("d-none");
-    successBox.classList.remove("d-none");
-
-    setTimeout(() => {
-        successBox.classList.add("d-none");
-        form.classList.remove("d-none");
-        form.reset();
-    }, 6000);
-});
-const swiper = new Swiper(".testimonialsSwiper", {
-    autoHeight: false,
+const heroSwiper = new Swiper(".heroSwiper", {
+    effect: "fade",
+    fadeEffect: {
+        crossFade: true
+    },
     loop: true,
-    spaceBetween: 20,
+    speed: 3000,
     autoplay: {
-        delay: 3000,
+        delay: 4000,
         disableOnInteraction: false,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    breakpoints: {
-        0: {
-            slidesPerView: 1,
-        },
-        768: {
-            slidesPerView: 2,
-        },
-        992: {
-            slidesPerView: 3,
-        },
-    },
+    }
+});
+AOS.init({
+    duration: 1000,
+    once: false,
+    offset: 100
 });
