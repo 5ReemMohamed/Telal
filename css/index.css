@@ -1674,7 +1674,7 @@ footer {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    inset: -18px;
+    inset: 0px;
     box-shadow: 0 0 10px rgba(166, 127, 73, 0.4);
     border-top: 5px solid #a67f49;
     border-right: 5px solid #313e55;
