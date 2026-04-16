@@ -720,7 +720,13 @@ body {
 .about-section {
     background: var(--color-surface);
 }
+.fs-7{
+font-size: 30px !important;
+}
+.fs-8{
+    font-size: 40px !important;
 
+}
 .image-box {
     position: relative;
     border-radius: 20px;
