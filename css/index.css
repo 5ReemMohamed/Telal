@@ -720,18 +720,21 @@ body {
 .about-section {
     background: var(--color-surface);
 }
-.fs-7{
-font-size: 30px !important;
+
+.fs-7 {
+    font-size: 30px !important;
 }
-.fs-8{
+
+.fs-8 {
     font-size: 40px !important;
 
 }
+
 .image-box {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
-max-height: 600px;
+    max-height: 600px;
 }
 
 .image-box img {
@@ -1716,6 +1719,8 @@ footer {
     filter:
         contrast(1.15) brightness(0.92) saturate(1.2) sepia(0.15) hue-rotate(-5deg);
     min-height: 400px;
+    width: 100%;
+    object-fit: cover;
 }
 
 .accordion-button::after {
@@ -1811,9 +1816,55 @@ footer {
 
 
 
-.about-content{
+.about-content {
     background-color: var(--color-background);
     border: 1px solid var(--color-accent);
     padding: 20px;
     border-radius: 20px;
+}
+
+
+.company-profile-section {
+    background: linear-gradient(135deg, #0f1a10c0, #1c2b1e94), url(../imgs/company-profile-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.company-profile-section::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: var(--color-foreground);
+    filter: blur(120px);
+    opacity: 0.2;
+    top: -100px;
+    right: -100px;
+}
+
+.profile-box {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.download-btn {
+    background: var(--color-accent);
+    color: #0f1a10;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
